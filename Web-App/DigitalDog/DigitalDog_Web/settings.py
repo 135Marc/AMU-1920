@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from djongo.models.fields import ObjectId
+import pymongo
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,6 +27,8 @@ SECRET_KEY = 'ujoy!8(27=2--75@$r)ktixh*e4n9tq6!a8d(2rv#u24vizy%-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+SITE_ID = 1
+
 ALLOWED_HOSTS = []
 
 
@@ -33,6 +37,10 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'dogs',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -77,12 +85,8 @@ DATABASES = {
     'default': {
         'ENGINE' : 'djongo',
         'NAME' : 'digitaldogdb',
-        'HOST' : 'mongodb+srv://admin:<#admin!>@cluster-digitaldog-jdpgr.mongodb.net:27017/<digitaldogdb>?retryWrites=true&w=majority',
-        'USER' : 'admin',
-        'PASSWORD' : '#admin!',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators

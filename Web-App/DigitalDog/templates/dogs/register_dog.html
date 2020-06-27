@@ -67,81 +67,30 @@
 
   <main id="main">
   <div class="container">
-    <div class="col-md-6">
-     <form method ="POST" action="">
-       
-      {% csrf_token %}
-
-        <div class="row">
-            <div class="col-4 col-sm-6">
-                <div class="form-group">
-                    <label> Username</label>
-                   {{form.username}}
-                </div>
-            </div>
-            <div class="col-4 col-sm-6">    
-                <div class="form-group">
-                    <label> Email</label>
-                    {{form.email}}
-                </div>
-            </div>
-
-        </div>
-
-        <div class="row">
-            <div class="col-4 col-sm-6">
-            <div class="form-group">
-                <label>Password</label>
-                {{form.password1}}
-            </div>
-            </div>
-            <div class="col-4 col-sm-6">
-                <div class="form-group">
-                    <label>Confirm Password</label>
-                    {{form.password2}}
-                </div>
-                </div>
-        </div>
-
-        <div class="row">
-            <div class="col-4 col-sm-6">    
-            <div class="form-group">
-                <label for="name_form"> Dog Name</label>
-                <input type="text" class="form-control form-control-sm" id="name_form">
-            </div>
-            </div>
-            <div class="col-4 col-sm-6">
-            <div class="form-group">
-                <label for="race_form"> Race</label>
-                <input type="text" class="form-control form-control-sm" id="race_form">
-            </div>     
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-4 col-sm-6">    
-            <div class="form-group">
-                <label for="height_form"> Height (cm)</label>
-                <input type="text" class="form-control form-control-sm" id="height_form">
-            </div>
-            </div>
-            <div class="col-4 col-sm-6">
-            <div class="form-group">
-                <label for="width_form"> Weight (kg)</label>
-                <input type="text" class="form-control form-control-sm" id="width_form">
-            </div>     
-            </div>
-        </div>
-
-        <br>
-    <button type="submit" class="btn btn-primary"><span class="icofont-diskette"></span> Submit </button>
-    
-        
+        <form method="POST" action="">
+          {% csrf_token %}
+    <div class="form-group">
+      <label>Dog Name</label>
+      {{ form.name }}
     </div>
-
+    <div class="form-group">
+        <label>Dog Breed</label>>
+      {{ form.breed }}
+    </div>
+        <div class="form-group form-check">
+            <label>Dog Weight</label>
+            {{ form.weight }}
+        </div>
+        <div class="form-group form-check">
+            <label>Dog Height</label>
+            {{ form.height }}
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+        <button type="submit" class="btn btn-primary">Forgot Password</button>
     </form>
-    </div>
+    
   </div>
+
 </main>
 
 
